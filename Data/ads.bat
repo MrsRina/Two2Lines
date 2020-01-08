@@ -1,0 +1,5 @@
+pause
+
+java Application
+
+pause
