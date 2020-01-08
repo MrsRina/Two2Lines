@@ -2,4 +2,9 @@
 
 <classpath>
 		<classpathentry kind = "lib" path = "Libs/lwjgl.jar"/>
+		<classpathentry kind = "lib" path = "Libs/lwjgl-glfw.jar">
+		<classpathentry kind = "lib" path = "Libs/lwjgl-glfw-javadoc.jar">
+		<classpathentry kind = "lib" path = "Libs/lwjgl-glfw-natives-windows.jar">
+		<classpathentry kind = "lib" path = "Libs/lwjgl-glfw-sources.jar">
+		<classpathentry kind = "lib" path = "Libs/lwjgl-">
 </classpath>
