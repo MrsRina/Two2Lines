@@ -8,7 +8,7 @@ class Run_Aplication:
 
 	def execute(self, lib):
 		try:
-			self.bat             = open("exec_debug.bat", "w")
+			self.bat             = open("debug.bat", "w")
 			self.debug_arguments = ("{}".format((
 				"Libs/lwjgl.jar;"                          +
 				"Libs/lwjgl-glfw.jar;"                     +
@@ -24,14 +24,20 @@ class Run_Aplication:
 				)))
 
 			lib.system("javac -cp " + self.debug_arguments + " Data\\Application.java")
-			lib.system("java -cp " + self.debug_arguments + " Application")
+			lib.system("cd data & java Application")
 
-			self.bat.write("pause\n")
-			self.bat.write("javac -classpath " + self.debug_arguments + " Data/application.java")
-			self.bat.write("\ncd data/")
-			self.bat.write("\njava -classpath " + self.debug_arguments + " Application")
-			self.bat.write("\npause")
-			self.bat.close()
+			self.process_file_debug(self.bat)
+		except:
+			raise
+		return None
+
+	def process_file_debug(self, file):
+		try:
+			file.write("pause\n")
+			file.write("javac -cp " + self.debug_arguments + " Data\\Application.java")
+			file.write("cd data & java Application")
+			file.write("\npause")
+			file.close()
 		except:
 			raise
 		return None
