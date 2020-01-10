@@ -23,8 +23,8 @@ class Run_Aplication:
 				"Libs/lwjgl-opengles-natives-windows.jar"
 			)))
 
-			lib.system('javac -cp ' + self.debug_arguments + ' Data\\Application.java ')
-			lib.system("cd data & java Application")
+			lib.system("javac -cp " + self.debug_arguments + " Data\\Application.java ")
+			lib.system("cd data & java -cp " + self.debug_arguments + " Application")
 
 			self.process_file_debug(self.bat)
 		except:
